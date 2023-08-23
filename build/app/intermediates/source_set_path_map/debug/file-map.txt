@@ -1,0 +1,12 @@
+com.example.online_selling_shop.app-jetified-annotation-experimental-1.1.0-0 /Users/ifg/.gradle/caches/transforms-3/4aa88baa28bebb2c5026ed42a8d72d9e/transformed/jetified-annotation-experimental-1.1.0/res
+com.example.online_selling_shop.app-jetified-window-1.0.0-beta04-1 /Users/ifg/.gradle/caches/transforms-3/aa63b1d9f3d50daa819346953e1a95a0/transformed/jetified-window-1.0.0-beta04/res
+com.example.online_selling_shop.app-jetified-window-java-1.0.0-beta04-2 /Users/ifg/.gradle/caches/transforms-3/f3e237183d5fb0dc1438664d84aebc84/transformed/jetified-window-java-1.0.0-beta04/res
+com.example.online_selling_shop.app-core-1.6.0-3 /Users/ifg/.gradle/caches/transforms-3/fa4fb2a8372e72f5c5be2d4ab2f5aab0/transformed/core-1.6.0/res
+com.example.online_selling_shop.app-debug-4 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/android/app/src/debug/res
+com.example.online_selling_shop.app-main-5 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/android/app/src/main/res
+com.example.online_selling_shop.app-pngs-6 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/generated/res/pngs/debug
+com.example.online_selling_shop.app-resValues-7 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/generated/res/resValues/debug
+com.example.online_selling_shop.app-rs-8 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/generated/res/rs/debug
+com.example.online_selling_shop.app-mergeDebugResources-9 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.online_selling_shop.app-mergeDebugResources-10 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.online_selling_shop.app-merged_res-11 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/merged_res/debug

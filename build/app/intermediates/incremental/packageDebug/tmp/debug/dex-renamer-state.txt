@@ -1,0 +1,4 @@
+#Wed Aug 23 11:57:26 TRT 2023
+base.0=/Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

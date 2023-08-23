@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:online_selling_shop/common/utils/app_colors.dart';
 import 'package:online_selling_shop/common/widgets/app_shadow.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
+import 'package:online_selling_shop/pages/sign_in/sign_in.dart';
 
 Widget appOnBoardingPage(
     PageController controller,{
   required String imagePath,
   required String title,
   required String subTitle,index=0,
+     required BuildContext context,
 }) {
   return Column(
     children: [
@@ -25,20 +27,33 @@ Widget appOnBoardingPage(
           text: subTitle,
         ),
       ),
-      _nextButton(index,controller),
+      _nextButton(index,controller,context),
     ],
   );
 }
 
-Widget _nextButton(index,PageController controller) {
+Widget _nextButton(int index,PageController controller,BuildContext context) {
   return GestureDetector(
     onTap: (){
-      controller.animateToPage(
+    
+    
+    if(index<3) {
+        controller.animateToPage(
           index,
-          duration:const  Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
           curve: Curves.linear,
-      );
-      debugPrint(index.toString());
+        );
+      }
+    else {
+      Navigator.pushNamed(context, "/signIn");
+      // Navigator.push(context,
+      //     MaterialPageRoute(builder:
+      //         (context)=>const SignIn()
+      //     ),
+      // );
+    }
+
+    
     },
     child: Container(
       width: 325,
@@ -52,7 +67,7 @@ Widget _nextButton(index,PageController controller) {
       decoration: appBoxShadow(
 
       ),
-      child: Center(child: text16Normal(text: "Next",
+      child: Center(child: text16Normal(text: index<3 ? "Next" : "Get Started",
       color: AppColors.primaryBackground
       ),),
     ),
