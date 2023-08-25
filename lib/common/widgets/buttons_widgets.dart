@@ -13,16 +13,15 @@ Widget appButton({
   String buttonName = "",
   bool isLogin = true,
   BuildContext? context,
-  Function? function,
+void  Function()? function,
 }) {
   return GestureDetector(
-    onTap: () {
-      Navigator.push(
-        context!,
-        MaterialPageRoute(
-          builder: (context) => const SignUp(),
-        ),
-      );
+    onTap: (){
+      if(function==null){
+        debugPrint("This handler $buttonName is Null!");
+      } else {
+        function();
+      }
     },
     child: Container(
       width: width.w,

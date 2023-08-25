@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/pages/sign_in/sign_in.dart';
+import 'package:online_selling_shop/pages/sign_up/sign_up.dart';
 import 'package:online_selling_shop/pages/welcome/welcome.dart';
 
 import 'common/utils/appbar_styles.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
             routes: {
               "/": (context) => Welcome(),
               "/signIn": (context) => const SignIn(),
+              "/register": (context) => const SignUp(),
             },
             // home:  Welcome(),
           );

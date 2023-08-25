@@ -5,6 +5,7 @@ import 'package:online_selling_shop/common/widgets/app_bar.dart';
 import 'package:online_selling_shop/common/widgets/buttons_widgets.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
 import 'package:online_selling_shop/pages/sign_in/widgets/sign_in_widgets.dart';
+import 'package:online_selling_shop/pages/sign_up/sign_up.dart';
 
 import '../../common/widgets/app_textfields.dart';
 
@@ -67,6 +68,7 @@ class SignIn extends StatelessWidget {
                 buttonName: "Register",
                 isLogin: false,
                     context: context,
+                    function: ()=> Navigator.pushNamed(context, "/register"),
               )),
             ],
           ),
