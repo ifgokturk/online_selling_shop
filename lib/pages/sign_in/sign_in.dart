@@ -1,24 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/common/widgets/app_bar.dart';
 import 'package:online_selling_shop/common/widgets/buttons_widgets.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
+import 'package:online_selling_shop/pages/sign_in/notifiers/sign_in_notifier.dart';
 import 'package:online_selling_shop/pages/sign_in/widgets/sign_in_widgets.dart';
 import 'package:online_selling_shop/pages/sign_up/sign_up.dart';
 
 import '../../common/widgets/app_textfields.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends ConsumerStatefulWidget {
   const SignIn({super.key});
 
   @override
+  ConsumerState<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends ConsumerState<SignIn> {
+  @override
   Widget build(BuildContext context) {
+    final signInProvider = ref.watch(signInNotifierProvider);
     return Container(
         child: SafeArea(
       child: Scaffold(
 
-        appBar: buildAppBar(),
+        appBar: buildAppBar(title:"Login"),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
