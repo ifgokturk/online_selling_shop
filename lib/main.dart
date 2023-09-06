@@ -8,12 +8,10 @@ import 'package:online_selling_shop/pages/sign_up/sign_up.dart';
 import 'package:online_selling_shop/pages/welcome/welcome.dart';
 
 import 'common/utils/appbar_styles.dart';
+import 'global.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options:
-  DefaultFirebaseOptions.currentPlatform,
-  );
+  Global.init();
   runApp(const ProviderScope(child: MyApp()));
 }
 

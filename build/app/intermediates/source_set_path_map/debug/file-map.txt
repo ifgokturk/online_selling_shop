@@ -15,6 +15,7 @@ com.example.online_selling_shop.app-rs-13 /Users/ifg/StudioProjects/GoogleCourse
 com.example.online_selling_shop.app-mergeDebugResources-14 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
 com.example.online_selling_shop.app-mergeDebugResources-15 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
 com.example.online_selling_shop.app-merged_res-16 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/merged_res/debug
-com.example.online_selling_shop.app-packaged_res-17 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/firebase_auth/intermediates/packaged_res/debug
-com.example.online_selling_shop.app-packaged_res-18 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/firebase_core/intermediates/packaged_res/debug
-com.example.online_selling_shop.app-packaged_res-19 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/fluttertoast/intermediates/packaged_res/debug
+com.example.online_selling_shop.app-packaged_res-17 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/cloud_firestore/intermediates/packaged_res/debug
+com.example.online_selling_shop.app-packaged_res-18 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/firebase_auth/intermediates/packaged_res/debug
+com.example.online_selling_shop.app-packaged_res-19 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/firebase_core/intermediates/packaged_res/debug
+com.example.online_selling_shop.app-packaged_res-20 /Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/fluttertoast/intermediates/packaged_res/debug

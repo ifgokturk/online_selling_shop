@@ -20,10 +20,6 @@
         "source": "com.example.online_selling_shop.app-main-9:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.example.online_selling_shop.app-merged_res-16:/drawable_launch_background.xml.flat",
-        "source": "com.example.online_selling_shop.app-main-9:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.online_selling_shop.app-merged_res-16:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.example.online_selling_shop.app-main-9:/mipmap-xhdpi/ic_launcher.png"
     }
