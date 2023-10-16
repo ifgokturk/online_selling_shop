@@ -12,6 +12,6 @@ AppBar buildAppBar({String title = ""}) {
         height: 1,
       ),
     ),
-    title: text16Normal(text: title, color: AppColors.primaryText),
+    title: Text16Normal(text: title, color: AppColors.primaryText),
   );
 }

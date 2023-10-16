@@ -1,19 +1,53 @@
-import 'package:firebase_core/firebase_core.dart';
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:online_selling_shop/firebase_options.dart';
-import 'package:online_selling_shop/pages/sign_in/sign_in.dart';
-import 'package:online_selling_shop/pages/sign_up/sign_up.dart';
-import 'package:online_selling_shop/pages/welcome/welcome.dart';
-
+import 'package:online_selling_shop/common/routes/routes.dart';
+import 'package:online_selling_shop/common/utils/constanst.dart';
+import 'common/services/http_util.dart';
 import 'common/utils/appbar_styles.dart';
 import 'global.dart';
+import 'package:http/http.dart' as http ;
 
 Future<void> main() async {
-  Global.init();
-  runApp(const ProviderScope(child: MyApp()));
+  await Global.init();
+
+  var obj1 = HttpUtil();
+  var obj2 = HttpUtil();
+
+  if (obj1.hashCode == obj2.hashCode){
+    print("it s singleton class");
+  }
+
+/*  HttpUtil().post("api/login", queryParameters:
+  {
+    'name': "fatihcik",
+    'avatar':"xyz",
+    'email': "ifg@kocaeli.bel.tr",
+    'open_id':'dfdsf',
+    'type':1,
+  });*/
+ /* var item =
+      Global.storageService.getString(AppConstants.STORAGE_USER_PROFILE_KEY) ??
+          "boşmuş";
+  print("item bu : $item");
+
+  if (item != "") {
+    var newItem = jsonDecode(item);
+    print(newItem['name']);
+    print(item.runtimeType);
+  }*/
+
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
+
+final GlobalKey<NavigatorState> navKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -26,6 +60,7 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (_, child) {
           return MaterialApp(
+            navigatorKey: navKey,
             title: 'Flutter Demo',
             theme: AppTheme.appThemeData,
 
@@ -34,13 +69,13 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ), */
             initialRoute: "/",
-            routes: {
-              "/": (context) => Welcome(),
-              "/signIn": (context) => const SignIn(),
-              "/register": (context) => const SignUp(),
-            },
+            //  routes:routesMap(),
+            onGenerateRoute: AppPages.generateRouteSettings,
             // home:  Welcome(),
           );
         });
   }
 }
+
+
+

@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/common/utils/app_colors.dart';
 import 'package:online_selling_shop/common/widgets/app_shadow.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
-
-import '../../pages/sign_up/sign_up.dart';
 
 Widget appButton({
   double width = 325,
@@ -13,11 +10,11 @@ Widget appButton({
   String buttonName = "",
   bool isLogin = true,
   BuildContext? context,
-void  Function()? function,
+  void Function()? function,
 }) {
   return GestureDetector(
-    onTap: (){
-      if(function==null){
+    onTap: () {
+      if (function == null) {
         debugPrint("This handler $buttonName is Null!");
       } else {
         function();
@@ -28,10 +25,10 @@ void  Function()? function,
       height: height.h,
       decoration: appBoxShadow(
         color: isLogin ? AppColors.primaryElement : Colors.white,
-        border: Border.all(),
+        boxBorder: Border.all(),
       ),
       child: Center(
-        child: text16Normal(
+        child: Text16Normal(
           text: buttonName,
           color: isLogin ? AppColors.primaryBackground : AppColors.primaryText,
         ),

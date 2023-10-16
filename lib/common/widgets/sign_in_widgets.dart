@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'app_shadow.dart';
+
 import 'text_widgets.dart';
 import 'package:online_selling_shop/common/utils/app_colors.dart';
 
 
-AppBar buildAppBar (){
+AppBar buildAppBar ({String title=""}){
   return AppBar(
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(1),
@@ -15,6 +15,6 @@ AppBar buildAppBar (){
       )
       ,
     ),
-    title: text16Normal(text: "Login",color: AppColors.primaryText),
+    title: Text16Normal(text: title,color: AppColors.primaryText),
   );
 }
