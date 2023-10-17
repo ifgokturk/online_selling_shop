@@ -52,14 +52,17 @@ class SignUpController {
     ref.read(appLoaderProvider.notifier).setLoaderValue(true);
     var context = Navigator.of(ref.context);
     try {
-    final credential = await SignUpRepo.firebaseSignUp(email, password);
+      final credential = await SignUpRepo.firebaseSignUp(email, password);
       if (kDebugMode) {
-        print(credential);
+        print("PRINTING CREDENTIAL $credential");
       }
       if (credential.user != null) {
+        print(
+            "PRINTING CREDENTIAL REFRESH TOKEN :> ${credential.user!.refreshToken}");
+
         await credential.user?.sendEmailVerification();
         await credential.user?.updateDisplayName(name);
-        String photoUrl ="uploads/default.png";
+        String photoUrl = "uploads/default.png";
         await credential.user?.updatePhotoURL(photoUrl);
         //get server photo url
         //set user photo url
@@ -67,24 +70,17 @@ class SignUpController {
         context.pop();
       }
     } on FirebaseAuthException catch (e) {
-if(e.code =='weak-password'){
-  toastInfo("PAssword is too weak");
-
-
-}else if(e.code=='email-already-in-use')
-  {
-    toastInfo("Email has  already been registered.");
-  } else if(e.code=='user-not-found'){
-  toastInfo("USer Not found");
-}
-
-
-
-    }catch(e){
+      if (e.code == 'weak-password') {
+        toastInfo("PAssword is too weak");
+      } else if (e.code == 'email-already-in-use') {
+        toastInfo("Email has  already been registered.");
+      } else if (e.code == 'user-not-found') {
+        toastInfo("USer Not found");
+      }
+    } catch (e) {
       if (kDebugMode) {
         print(e.toString());
       }
-
     }
     ref.read(appLoaderProvider.notifier).setLoaderValue(false);
   }

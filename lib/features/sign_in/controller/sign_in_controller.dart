@@ -62,7 +62,6 @@ class SignInController {
         String? photoUrl = user.photoURL;
 
         LoginRequestEntity loginRequestEntity = LoginRequestEntity();
-
         loginRequestEntity.avatar = photoUrl;
         loginRequestEntity.name = displayName;
         loginRequestEntity.email = email;
@@ -82,7 +81,7 @@ class SignInController {
       }
     } catch (e) {
       if (kDebugMode) {
-        print(e.toString());
+        print("E print  :> ${e.toString()}");
       }
     }
 
@@ -92,14 +91,14 @@ class SignInController {
   Future<void> asyncPostAllData(LoginRequestEntity loginRequestEntity) async {
     // we need to talk server
     var result = await SignInRepo.login(params: loginRequestEntity);
-    if(result.code==200){
+    if (result.code == 200) {
       try {
         Global.storageService.setString(
           AppConstants.STORAGE_USER_PROFILE_KEY,
           jsonEncode(result.data),
         );
-        Global.storageService
-            .setString(AppConstants.STORAGE_USER_TOKEN_KEY, result.data!.access_token!);
+        Global.storageService.setString(
+            AppConstants.STORAGE_USER_TOKEN_KEY, result.data!.access_token!);
 
         navKey.currentState
             ?.pushNamedAndRemoveUntil("/application", (route) => false);
@@ -110,10 +109,9 @@ class SignInController {
       );*/
         // navigator.pushNamed("/application");
       } catch (e) {
-        debugPrint(e.toString());
+        debugPrint(" E print => ${e.toString()}");
       }
-    }
-    else {
+    } else {
       toastInfo("Login Error");
     }
 

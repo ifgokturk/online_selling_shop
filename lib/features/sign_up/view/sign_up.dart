@@ -31,7 +31,8 @@ class _SignUpState extends ConsumerState<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-  //  final regProvider = ref.watch(registerNotifierProvider);
+    //  final regProvider = ref.watch(registerNotifierProvider);
+    final regProvider = ref.watch(registerNotifierProvider);
     final loader = ref.watch(appLoaderProvider);
     return Container(
         child: SafeArea(
@@ -103,8 +104,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 25.w),
-                      child:
-                        const Text14Normal(
+                      child: const Text14Normal(
                           text:
                               "By creating an account, you are agreeing with our terms and conditions"),
                     ),

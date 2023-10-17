@@ -12,11 +12,13 @@ class RegisterNotifier extends _$RegisterNotifier {
 
   void onUserNameChange(String name) {
     state = state.copyWith(userName: name);
+    print(state.userName);
   }
 
   void onUserEmailChange(String email) {
     state = state.copyWith(email: email);
   }
+
   void onUserPasswordChange(String password) {
     state = state.copyWith(password: password);
   }
@@ -24,5 +26,4 @@ class RegisterNotifier extends _$RegisterNotifier {
   void onUserConfirmPasswordChange(String rePassword) {
     state = state.copyWith(rePassword: rePassword);
   }
-
 }

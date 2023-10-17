@@ -9,27 +9,27 @@ import 'package:online_selling_shop/common/utils/constanst.dart';
 import 'common/services/http_util.dart';
 import 'common/utils/appbar_styles.dart';
 import 'global.dart';
-import 'package:http/http.dart' as http ;
+import 'package:http/http.dart' as http;
 
 Future<void> main() async {
   await Global.init();
 
-  var obj1 = HttpUtil();
-  var obj2 = HttpUtil();
+  // var obj1 = HttpUtil();
+  // var obj2 = HttpUtil();
 
-  if (obj1.hashCode == obj2.hashCode){
-    print("it s singleton class");
-  }
+  // if (obj1.hashCode == obj2.hashCode){
+  //   print("it s singleton class");
+  // }
 
-/*  HttpUtil().post("api/login", queryParameters:
-  {
-    'name': "fatihcik",
-    'avatar':"xyz",
-    'email': "ifg@kocaeli.bel.tr",
-    'open_id':'dfdsf',
-    'type':1,
-  });*/
- /* var item =
+  // HttpUtil().post("api/login", queryParameters: {
+  //   'name': "sinem5",
+  //   'email': "sinem5@bb2.com",
+  //   'avatar': "2xyz.com",
+  //   'type': 1,
+  //   'open_id': "5xcvddd",
+  //   'password': "123456"
+  // });
+  /* var item =
       Global.storageService.getString(AppConstants.STORAGE_USER_PROFILE_KEY) ??
           "boşmuş";
   print("item bu : $item");
@@ -76,6 +76,3 @@ class MyApp extends StatelessWidget {
         });
   }
 }
-
-
-

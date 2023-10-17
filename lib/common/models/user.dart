@@ -74,10 +74,6 @@ class UserProfile {
   });
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
-    //  if((json["access_token"])==null){
-    //   return UserProfile();
-    // }
-
     return UserProfile(
       access_token: json["access_token"],
       token: json["token"],

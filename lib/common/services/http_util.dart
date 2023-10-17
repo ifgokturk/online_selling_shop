@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:online_selling_shop/common/utils/constanst.dart';
-
 import '../../global.dart';
 
 class HttpUtil {
@@ -25,16 +24,16 @@ class HttpUtil {
     dio = Dio(options);
 
     dio.interceptors.add(InterceptorsWrapper(
-      onRequest: (request, handler) {
-        print("ITS REQUEST  ${request.data}");
-        return handler.next(request);
+      onRequest: (options, handler) {
+        print("ITS REQUEST  ${options.data}");
+        return handler.next(options);
       },
       onResponse: (response, handler) {
         print("ITS RESPONSE ${response.data}");
         return handler.next(response);
       },
       onError: (DioException e, handler) {
-        print("My Error is $e");
+        print("My Error is HATA $e");
         ErrorEntity eInfo = createErrorEntity(e);
         onError(eInfo);
       },
@@ -68,7 +67,7 @@ class HttpUtil {
       path,
       data: data,
       queryParameters: queryParameters,
-      options: options,
+      options: requestOptions,
     );
     return response.data;
   }
@@ -80,7 +79,7 @@ class ErrorEntity implements Exception {
   ErrorEntity({
     required this.code,
     required this.message,
-});
+  });
   @override
   String toString() {
     if (message == "") return "Exception";
@@ -89,7 +88,7 @@ class ErrorEntity implements Exception {
 }
 
 ErrorEntity createErrorEntity(DioException error) {
-  switch(error.type){
+  switch (error.type) {
     case DioExceptionType.connectionTimeout:
       return ErrorEntity(code: -1, message: "connectionTimeout");
     case DioExceptionType.sendTimeout:
@@ -105,30 +104,30 @@ ErrorEntity createErrorEntity(DioException error) {
     case DioExceptionType.connectionError:
       return ErrorEntity(code: -1, message: "connectionError");
     case DioExceptionType.badResponse:
-      switch(error.response!.statusCode){
+      switch (error.response!.statusCode) {
         case 400:
           return ErrorEntity(code: 400, message: "request syntax error");
         case 401:
-          return ErrorEntity(code: 400, message: "permission ");
+          return ErrorEntity(code: 401, message: "permission ");
       }
       return ErrorEntity(code: -1, message: "badResponse");
   }
 }
 
-void onError(ErrorEntity eInfo){
+void onError(ErrorEntity eInfo) {
   debugPrint('error code-> ${eInfo.code}, error.message -> ${eInfo.message}');
-  switch(eInfo.code){
+  switch (eInfo.code) {
     case 400:
       print("Server syntax error");
       break;
     case 401:
       print("You are denied to continue");
-    break;
-      case 500:
+      break;
+    case 500:
       print("Internal Server Error");
-  break;
-  default :
+      break;
+    default:
       print("unknown error");
-  break;
+      break;
   }
 }
