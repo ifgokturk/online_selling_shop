@@ -31,7 +31,7 @@ Widget appTextField({
             children: [
               Container(
                 margin: EdgeInsets.only(left: 20.w),
-                child: appImage(imagePath: iconName),
+                child: AppImage(imagePath: iconName),
               ),
              appTextFieldOnly(controller: controller, hintText: hintText, func: func,
              obsecureText: obsecureText,

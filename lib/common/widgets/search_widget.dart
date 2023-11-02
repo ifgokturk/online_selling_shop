@@ -21,7 +21,7 @@ Widget searchBar() {
           children: [
             Container(
               margin: EdgeInsets.only(left: 17.w),
-              child: appImage(
+              child:const AppImage(
                 imagePath: ImageRes.searchIcon,
               ),
             ),
@@ -45,7 +45,7 @@ Widget searchBar() {
               color: AppColors.primaryElement,
             )
           ),
-          child: appImage(imagePath: ImageRes.searchButton ),
+          child: const AppImage(imagePath: ImageRes.searchButton ),
         ),
       ),
     ],

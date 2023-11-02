@@ -35,29 +35,39 @@ class _HomeState extends ConsumerState<Home> {
 
         Scaffold(
       backgroundColor: Colors.white,
-      appBar: homeAppBar(),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25.w),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 15.h,
-              ),
-              const HelloText(),
-              const UserName(),
-              SizedBox(
-                height: 20.h,
-              ),
-              searchBar(),
-              SizedBox(
-                height: 20.h,
-              ),
-              HomeBanner(ref: ref, controller: _controller),
-              const HomeMenuBar(),
-           /*
+      appBar: homeAppBar(ref),
+      body: RefreshIndicator(
+        onRefresh: (){
+return
+          ref.refresh(homeCourseListProvider.notifier).fetchCourseList();
+        },
+        child:
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25.w),
+          child:
+
+
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 15.h,
+                ),
+                const HelloText(),
+                const UserName(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                searchBar(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                HomeBanner(ref: ref, controller: _controller),
+                const HomeMenuBar(),
+                CourseItemGrid(ref:ref),
+                /*
               CustomScrollView(
                 physics: const ScrollPhysics(),
                 shrinkWrap: true,
@@ -79,12 +89,18 @@ class _HomeState extends ConsumerState<Home> {
                 ],
               ),
            */
-            const  CourseItemGrid(),
 
-            ],
+              ],
+            ),
           ),
+
+
         ),
+
       ),
-    );
+
+
+
+        );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/common/utils/app_colors.dart';
@@ -22,11 +24,13 @@ class Text16Normal extends StatelessWidget {
   final String text;
   final Color color;
   final FontWeight fontWeight;
+  final TextAlign? textAlign;
   const Text16Normal({
     super.key,
     this.text = "",
     this.color = AppColors.primarySecondaryElementText,
     this.fontWeight=FontWeight.normal,
+    this.textAlign = TextAlign.center,
   });
 
   @override
@@ -46,21 +50,26 @@ class Text16Normal extends StatelessWidget {
 class Text14Normal extends StatelessWidget {
   final String text;
   final Color color;
+  final FontWeight? fontWeight;
+  final TextAlign? textAlign;
   const Text14Normal({
     super.key,
     this.text = "",
     this.color = AppColors.primaryThreeElementText,
+    this.fontWeight,
+    this.textAlign,
+
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.start,
+      textAlign: textAlign,
       style: TextStyle(
         color: color,
         fontSize: 14,
-        fontWeight: FontWeight.normal,
+        fontWeight: fontWeight,
       ),
     );
   }
@@ -108,7 +117,7 @@ class Text10Normal extends StatelessWidget {
 }
 
 class Text11Normal extends StatelessWidget {
-  final String text;
+  final String? text;
   final Color color;
   const Text11Normal({
     super.key,
@@ -119,11 +128,44 @@ class Text11Normal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      text!,
       textAlign: TextAlign.start,
       style: TextStyle(
         color: color,
         fontSize: 11.sp,
+
+      ),
+    );
+  }
+}
+
+
+
+class FadeText extends StatelessWidget {
+  final String text;
+  final Color color;
+  final double fontSize;
+  const FadeText({
+    super.key,
+    this.text = "",
+    this.color = AppColors.primaryElementText,
+    this.fontSize=10,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+
+      text,
+      softWrap: true,
+      maxLines: 1,
+      textAlign: TextAlign.left,
+      overflow: TextOverflow.fade,
+      style: TextStyle(
+        color: color,
+        fontSize: fontSize.sp,
+        fontWeight: FontWeight.bold,
+
 
       ),
     );

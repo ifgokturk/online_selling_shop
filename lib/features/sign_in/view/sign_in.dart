@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/common/global_loader/global_loader.dart';
 import 'package:online_selling_shop/common/widgets/app_bar.dart';
-import 'package:online_selling_shop/common/widgets/buttons_widgets.dart';
+import 'package:online_selling_shop/common/widgets/button_widgets.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
 import 'package:online_selling_shop/features/sign_in/provider/sign_in_notifier.dart';
 import 'package:online_selling_shop/features/sign_in/controller/sign_in_controller.dart';
@@ -97,18 +97,18 @@ class _SignInState extends ConsumerState<SignIn> {
                 height: 85.h,
               ),
               Center(
-                  child: appButton(
+                  child: AppButton(
                       buttonName: "Login",
-                      function: () => _controller.handleSignIn(ref))),
+                      func: () => _controller.handleSignIn(ref))),
               SizedBox(
                 height: 15.h,
               ),
               Center(
-                  child: appButton(
+                  child: AppButton(
                 buttonName: "Register",
                 isLogin: false,
                 context: context,
-                function: () => Navigator.pushNamed(context, "/register"),
+                func: () => Navigator.pushNamed(context, "/register"),
               )),
             ],
           ),

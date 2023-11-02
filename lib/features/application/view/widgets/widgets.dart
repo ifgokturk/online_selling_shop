@@ -64,17 +64,17 @@ Widget _bottomContainer({
 Widget appScreens({required int index}) {
   List<Widget> screens = [
     const Home(),
-    Center(
-      child: appImage(imagePath: ImageRes.search),
+    const Center(
+      child: AppImage(imagePath: ImageRes.search),
     ),
-    Center(
-      child: appImage(imagePath: ImageRes.play),
+    const Center(
+      child: AppImage(imagePath: ImageRes.play),
     ),
-    Center(
-      child: appImage(imagePath: ImageRes.message),
+   const Center(
+      child: AppImage(imagePath: ImageRes.message),
     ),
-    Center(
-      child: appImage(imagePath: ImageRes.person),
+    const Center(
+      child: AppImage(imagePath: ImageRes.person),
     ),
   ];
 

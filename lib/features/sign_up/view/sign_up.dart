@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_selling_shop/common/global_loader/global_loader.dart';
 import 'package:online_selling_shop/common/widgets/app_bar.dart';
-import 'package:online_selling_shop/common/widgets/buttons_widgets.dart';
+import 'package:online_selling_shop/common/widgets/button_widgets.dart';
 import 'package:online_selling_shop/common/widgets/text_widgets.dart';
 
 import 'package:online_selling_shop/features/sign_up/controller/sign_up_controller.dart';
@@ -112,11 +112,11 @@ class _SignUpState extends ConsumerState<SignUp> {
                       height: 85.h,
                     ),
                     Center(
-                        child: appButton(
+                        child: AppButton(
                       buttonName: "Sign Up",
                       isLogin: true,
                       context: context,
-                      function: () => _controller.handleSignUp(),
+                      func: () => _controller.handleSignUp(),
                     )),
                   ],
                 ),

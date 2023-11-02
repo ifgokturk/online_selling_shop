@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:online_selling_shop/common/utils/constanst.dart';
 import '../../global.dart';
 
@@ -25,15 +26,21 @@ class HttpUtil {
 
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) {
-        print("ITS REQUEST  ${options.data}");
+        if (kDebugMode) {
+          print("ITS REQUEST  ${options.data}");
+        }
         return handler.next(options);
       },
       onResponse: (response, handler) {
-        print("ITS RESPONSE ${response.data}");
+        if (kDebugMode) {
+          print("ITS RESPONSE ${response.data}");
+        }
         return handler.next(response);
       },
       onError: (DioException e, handler) {
-        print("My Error is HATA $e");
+        if (kDebugMode) {
+          print("My Error is HATA $e");
+        }
         ErrorEntity eInfo = createErrorEntity(e);
         onError(eInfo);
       },

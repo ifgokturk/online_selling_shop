@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_selling_shop/common/utils/constanst.dart';
 import 'package:online_selling_shop/common/utils/image_res.dart';
 import 'package:online_selling_shop/common/widgets/app_shadow.dart';
 import 'package:online_selling_shop/common/widgets/image_widgets.dart';
@@ -97,20 +98,31 @@ class HelloText extends StatelessWidget {
   }
 }
 
-AppBar homeAppBar() {
+AppBar homeAppBar(WidgetRef ref) {
+  var profileState = ref.watch(homeUserProfileProvider);
   return AppBar(
     title: Container(
       margin: EdgeInsets.only(left: 7.w, right: 7.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          appImage(
+          AppImage(
             width: 18.w,
             height: 12.h,
             imagePath: ImageRes.menu,
           ),
-          GestureDetector(
-            child: const AppBoxDecorationImage(),
+          profileState.when(
+            data: (value) => GestureDetector(
+              child: AppBoxDecorationImage(
+                imagePath: "${AppConstants.SERVER_API_URL}${value.avatar!}",
+              ),
+            ),
+            error: (err, stack) => AppImage(
+              width: 18.w,
+              height: 12.h,
+              imagePath: ImageRes.defaultImg,
+            ),
+            loading: () => Container(),
           ),
         ],
       ),
@@ -145,7 +157,9 @@ class HomeMenuBar extends StatelessWidget {
           ),
         ),
         //courese button
-        SizedBox(height: 20.h,),
+        SizedBox(
+          height: 20.h,
+        ),
         Row(
           children: [
             Container(
@@ -161,7 +175,8 @@ class HomeMenuBar extends StatelessWidget {
                 text: "All",
               ),
             ),
-            Container(margin: EdgeInsets.only(left: 30.w),
+            Container(
+              margin: EdgeInsets.only(left: 30.w),
               child: const Text11Normal(
                 text: "Popular",
                 color: AppColors.primarySecondaryElementText,
@@ -174,17 +189,54 @@ class HomeMenuBar extends StatelessWidget {
   }
 }
 
-
-
 class CourseItemGrid extends StatelessWidget {
-  const CourseItemGrid({super.key});
+  final WidgetRef ref;
+  const CourseItemGrid({super.key, required this.ref});
 
   @override
   Widget build(BuildContext context) {
-    return
-      Container(
-        child: Text(""),
-      )
-    ;
+    final courseState = ref.watch(homeCourseListProvider);
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        vertical: 18.h,
+      ),
+      child: courseState.when(
+        data: (data) {
+          return GridView.builder(
+            physics: const ScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15,
+              mainAxisSpacing: 15,
+              childAspectRatio: 1.6,
+            ),
+            itemCount: data?.length,
+            itemBuilder: (_, int index) {
+              return AppBoxDecorationImage(
+                imagePath:
+                    "${AppConstants.IMAGE_UPLOADS_PATH}${data![index].thumbnail!}",
+                fit: BoxFit.fitWidth,
+                courseItem: data[index],
+                func: (){
+
+               Navigator.of(context).pushNamed("/course_detail",
+                 arguments: {
+                 "id":data[index].id!
+                 }
+               );
+
+
+                },
+              );
+            },
+          );
+        },
+        error: (error, stackTrace) => Text("Error $error"),
+        loading: () => const Center(
+          child: Text("Loading"),
+        ),
+      ),
+    );
   }
 }
