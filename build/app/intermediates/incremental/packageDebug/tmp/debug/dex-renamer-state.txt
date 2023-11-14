@@ -1,4 +1,4 @@
-#Tue Oct 31 11:35:42 TRT 2023
+#Mon Nov 13 12:27:40 TRT 2023
 base.0=/Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/Users/ifg/StudioProjects/GoogleCourse/online_selling_shop/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

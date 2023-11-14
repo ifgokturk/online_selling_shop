@@ -10,8 +10,12 @@ class ImageRes {
   static const String email = '$_iconBase/apple.png';
   static const String lock = '$_iconBase/lock.png';
   static const String home = '$_iconBase/home.png';
+  static const String arrowRight = '$_iconBase/arrow_right.png';
   static const String search = '$_iconBase/search2.png';
   static const String play = '$_iconBase/play-circle.png';
+  static const String pause = '$_iconBase/pause.png';
+  static const String left = '$_iconBase/rewind-left.png';
+  static const String right = '$_iconBase/rewind-right.png';
   static const String message = '$_iconBase/message-circle.png';
   static const String person = '$_iconBase/person2.png';
   static const String searchIcon = '$_iconBase/search.png';

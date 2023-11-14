@@ -106,6 +106,8 @@ class Text10Normal extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 2,
       textAlign: TextAlign.start,
       style: TextStyle(
         color: color,
@@ -139,8 +141,6 @@ class Text11Normal extends StatelessWidget {
   }
 }
 
-
-
 class FadeText extends StatelessWidget {
   final String text;
   final Color color;
@@ -167,6 +167,34 @@ class FadeText extends StatelessWidget {
         fontWeight: FontWeight.bold,
 
 
+      ),
+    );
+  }
+}
+
+
+class Text13Normal extends StatelessWidget {
+  final String text;
+  final Color color;
+  final FontWeight fontWeight;
+  final TextAlign? textAlign;
+  const Text13Normal({
+    super.key,
+    this.text = "",
+    this.color = AppColors.primarySecondaryElementText,
+    this.fontWeight=FontWeight.bold,
+    this.textAlign = TextAlign.center,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        color: color,
+        fontSize: 13,
+        fontWeight: fontWeight,
       ),
     );
   }

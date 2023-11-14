@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.online_selling_shop.app-mergeDebugResources-14:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.online_selling_shop.app-mergeDebugResources-16:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/ifg/.gradle/caches/transforms-3/1e931a33da3bf5577c473499949838ad/transformed/browser-1.4.0/res/values-en-rXC/values-en-rXC.xml",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/ifg/.gradle/caches/transforms-3/3a31a203e041ecffe8caac85878ae9ba/transformed/core-1.6.0/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/Users/ifg/.gradle/caches/transforms-3/5eb8c251589f43b1082eee156668084a/transformed/core-1.7.0/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

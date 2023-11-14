@@ -196,6 +196,7 @@ class CourseItemGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final courseState = ref.watch(homeCourseListProvider);
+    print("CourseItemGrid");
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 18.h,
